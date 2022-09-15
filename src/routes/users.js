@@ -1,10 +1,15 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const checkToken = require("../utils/checkToken")
 
 const router = express.Router();
 
 const User = require("../models/User");
+
+router.get("/", async (req, res) => {
+  res.status(200).json({ msg: "Bem vindo a API" });
+});
 
 //Rota para registar
 router.post("/auth/register", async (req, res) => {
