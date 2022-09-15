@@ -14,6 +14,10 @@ app.use("/books", routesBooks);
 const dbUser = process.env.DB_USER;
 const dbPassword = process.env.DB_PASS;
 
+app.get("/", async (req, res) => {
+  res.status(200).json({ msg: "Bem vindo a API" });
+});
+
 mongoose
   .connect(
     `mongodb+srv://${dbUser}:${dbPassword}@cluster0.xo9nrkq.mongodb.net/API_Books?retryWrites=true&w=majority`
