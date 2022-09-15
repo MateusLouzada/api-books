@@ -3,7 +3,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routesUsers = require("./routes/users");
 const routesBooks = require("./routes/books");
-const PORT = process.env.PORT
 
 const app = express();
 
@@ -23,7 +22,7 @@ mongoose
     `mongodb+srv://${dbUser}:${dbPassword}@cluster0.xo9nrkq.mongodb.net/API_Books?retryWrites=true&w=majority`
   )
   .then(() => {
-    app.listen(PORT);
+    app.listen(process.env.PORT || 3000);
     console.log("Conectado ao banco com sucesso!");
   })
   .catch((err) => console.log(err));
