@@ -11,12 +11,8 @@ const app = express();
 app.use((_, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
-  app.use(
-    cors({
-      origin: "*",
-      methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
-    })
-  );
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  app.use(cors());
   next();
 });
 app.use(express.json());
