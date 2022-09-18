@@ -1,11 +1,19 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
+
 const routesUsers = require("./routes/users");
 const routesBooks = require("./routes/books");
 
 const app = express();
 
+app.use((_, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+  app.use(cors());
+  next();
+});
 app.use(express.json());
 app.use("/", routesUsers);
 app.use("/books", routesBooks);
