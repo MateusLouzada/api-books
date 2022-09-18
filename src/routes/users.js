@@ -1,13 +1,11 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const checkToken = require("../utils/checkToken")
+const checkToken = require("../utils/checkToken");
 
 const router = express.Router();
 
 const User = require("../models/User");
-
-
 
 //Rota para registar
 router.post("/auth/register", async (req, res) => {
@@ -98,7 +96,14 @@ router.post("/auth/login", async (req, res) => {
       },
       secret
     );
-    res.status(200).json({ msg: "Autenticação realizada com sucesso!", token });
+    res
+      .status(200)
+      .json({
+        msg: "Autenticação realizada com sucesso!",
+        id: user._id,
+        email: user.email,
+        token,
+      });
   } catch (err) {
     console.log(err);
     res

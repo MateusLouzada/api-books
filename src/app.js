@@ -22,7 +22,7 @@ mongoose
     `mongodb+srv://${dbUser}:${dbPassword}@cluster0.xo9nrkq.mongodb.net/API_Books?retryWrites=true&w=majority`
   )
   .then(() => {
-    app.listen(process.env.PORT || 3000, '0.0.0.0');
+    app.listen(process.env.PORT || 3333);
     console.log("Conectado ao banco com sucesso!");
   })
   .catch((err) => console.log(err));
