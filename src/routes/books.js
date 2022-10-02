@@ -1,5 +1,5 @@
 const express = require("express");
-const checkToken = require("../utils/checkToken")
+const checkToken = require("../utils/checkToken");
 
 const router = express.Router();
 
@@ -23,7 +23,7 @@ router.get("/books_user/:id", checkToken, async (req, res) => {
 
 //Adicionar um livro a um usuário
 
-router.post("/add_book", checkToken ,async (req, res) => {
+router.post("/add_book", checkToken, async (req, res) => {
   const {
     name,
     dateInitial,
@@ -71,12 +71,13 @@ router.post("/add_book", checkToken ,async (req, res) => {
 
 //Alterando dados de um livro do usuário
 
-router.put("/change_book",checkToken, async (req, res) => {
+router.put("/change_book", checkToken, async (req, res) => {
   const {
     name,
     idUser,
     newDateInitial,
     newDateFinal,
+    newReadingTime,
     newRead,
     newHaveBook,
   } = req.body;
@@ -95,6 +96,7 @@ router.put("/change_book",checkToken, async (req, res) => {
         dateFinal: newDateFinal,
         read: newRead,
         haveBook: newHaveBook,
+        readingTime: newReadingTime,
       },
       { new: true }
     );
@@ -109,7 +111,7 @@ router.put("/change_book",checkToken, async (req, res) => {
 
 //Excluindo um livro
 
-router.delete("/delete_book",checkToken, async (req, res) => {
+router.delete("/delete_book", checkToken, async (req, res) => {
   const { name, idUser } = req.body;
 
   const book = await Book.findOne({ name, idUser });
