@@ -17,6 +17,7 @@ O projeto surgiu de um problema que eu e alguns amigos encontramos. Esse problem
 - ReactJS
 - Material UI
 - Styled-Components
+- API Google-Books
 ## Implantação em produção
 - Back end: Heroku
 - Front end web: Heroku
