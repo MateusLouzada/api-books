@@ -1,5 +1,5 @@
 const express = require("express");
-const checkToken = require("../utils/checkToken");
+const checkToken = require("../middlewares/checkToken");
 
 const router = express.Router();
 
