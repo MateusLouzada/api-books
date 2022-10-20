@@ -14,9 +14,7 @@ module.exports = function (validator) {
       next();
     } catch (err) {
       if (err.isJoi)
-        return next(createHttpError(422, { message: err.message }));
-
-      console.log(err.message);
+        return next(res.status(422).send({ message: err.details[0].path }));
       next(createHttpError(500));
     }
   };
