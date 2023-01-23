@@ -8,6 +8,7 @@ const registerSchema = Joi.object({
     .required(),
   email: Joi.string().email().lowercase().required(),
   password: Joi.string().min(4).required(),
+  confirmPassword: Joi.string().min(4).required(),
 });
 
 module.exports = registerSchema;

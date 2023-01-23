@@ -13,8 +13,10 @@ module.exports = function (validator) {
       req.body = validated;
       next();
     } catch (err) {
-      if (err.isJoi)
-        return next(res.status(422).send({ message: err.details[0].path }));
+      if (err.isJoi) {
+        console.log(err);
+        return next(res.status(422).send({ message: err.details[0].message }));
+      }
       next(createHttpError(500));
     }
   };
