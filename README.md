@@ -3,7 +3,7 @@
 
 # Sobre o projeto
 
-https://front-books.herokuapp.com/
+https://main--gerenciador-de-livros.netlify.app/
 
 O projeto surgiu de um problema que eu e alguns amigos encontramos. Esse problema seria uma maneira fácil de gerenciar livros que possuímos e que gostariamos de possuir, e com isso obter informações sobre tempo de leitura e quantidade de livros.
 
@@ -19,9 +19,9 @@ O projeto surgiu de um problema que eu e alguns amigos encontramos. Esse problem
 - Styled-Components
 - API Google-Books
 ## Implantação em produção
-- Back end: Heroku
-- Front end web: Heroku
-- Banco de dados: MongoDB
+- Back end: Render
+- Front end web: Netlify
+- Banco de dados: MongoDB Atlas
 
 # Como executar o projeto
 
